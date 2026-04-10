@@ -1,9 +1,14 @@
 // dto/get-chat-history.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { ChatHistory } from 'generated/prisma/client';
+import { ChatHistoryDto } from './chat-history.dto';
 
 export class ChatHistoryResponseDto {
+  @ApiProperty()
   success: boolean;
+
+  @ApiProperty()
   status: number;
-  data: ChatHistory[];
+
+  @ApiProperty({ type: () => [ChatHistoryDto] })
+  data: ChatHistoryDto[];
 }

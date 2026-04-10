@@ -36,7 +36,7 @@ export class TestGeneratorController {
   @Get('chat-history')
   async getChatHistory(
     @CurrentUser() user: { userId: number },
-  ): Promise<ChatHistoryResponseDto> {    
+  ) {    
     return this.service.getChatHistoryByUser(user.userId);
   }
 
